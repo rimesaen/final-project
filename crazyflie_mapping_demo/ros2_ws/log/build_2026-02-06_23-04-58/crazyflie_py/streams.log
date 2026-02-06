@@ -1,0 +1,57 @@
+[0.643s] Invoking command in '/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_py': AMENT_PREFIX_PATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces LD_LIBRARY_PATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages:/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/crazyflie_py build --build-base /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build install --record /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/install.log --single-version-externally-managed install_data
+[1.009s] running egg_info
+[1.011s] creating ../../../build/crazyflie_py/crazyflie_py.egg-info
+[1.011s] writing ../../../build/crazyflie_py/crazyflie_py.egg-info/PKG-INFO
+[1.012s] writing dependency_links to ../../../build/crazyflie_py/crazyflie_py.egg-info/dependency_links.txt
+[1.012s] writing entry points to ../../../build/crazyflie_py/crazyflie_py.egg-info/entry_points.txt
+[1.013s] writing requirements to ../../../build/crazyflie_py/crazyflie_py.egg-info/requires.txt
+[1.013s] writing top-level names to ../../../build/crazyflie_py/crazyflie_py.egg-info/top_level.txt
+[1.013s] writing manifest file '../../../build/crazyflie_py/crazyflie_py.egg-info/SOURCES.txt'
+[1.015s] reading manifest file '../../../build/crazyflie_py/crazyflie_py.egg-info/SOURCES.txt'
+[1.015s] writing manifest file '../../../build/crazyflie_py/crazyflie_py.egg-info/SOURCES.txt'
+[1.016s] running build
+[1.016s] running build_py
+[1.016s] creating /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build
+[1.016s] creating /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib
+[1.016s] creating /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.017s] copying crazyflie_py/util.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.017s] copying crazyflie_py/crazyflie.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.017s] copying crazyflie_py/linuxjsdev.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.017s] copying crazyflie_py/__init__.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.018s] copying crazyflie_py/keyboard.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.018s] copying crazyflie_py/uav_trajectory.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.019s] copying crazyflie_py/joystick.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.019s] copying crazyflie_py/crazyswarm_py.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.019s] copying crazyflie_py/genericJoystick.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py
+[1.019s] running install
+[1.020s] running install_lib
+[1.020s] creating /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.020s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/util.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.020s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/crazyflie.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.021s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/linuxjsdev.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.021s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/__init__.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.021s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/keyboard.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.021s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/uav_trajectory.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.021s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/joystick.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.022s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/crazyswarm_py.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.022s] copying /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build/lib/crazyflie_py/genericJoystick.py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py
+[1.022s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/util.py to util.cpython-310.pyc
+[1.023s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/crazyflie.py to crazyflie.cpython-310.pyc
+[1.027s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/linuxjsdev.py to linuxjsdev.cpython-310.pyc
+[1.028s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/__init__.py to __init__.cpython-310.pyc
+[1.029s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/keyboard.py to keyboard.cpython-310.pyc
+[1.029s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/uav_trajectory.py to uav_trajectory.cpython-310.pyc
+[1.030s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/joystick.py to joystick.cpython-310.pyc
+[1.031s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/crazyswarm_py.py to crazyswarm_py.cpython-310.pyc
+[1.031s] byte-compiling /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py/genericJoystick.py to genericJoystick.cpython-310.pyc
+[1.032s] running install_data
+[1.032s] creating /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/share/ament_index
+[1.032s] creating /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/share/ament_index/resource_index
+[1.032s] creating /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/share/ament_index/resource_index/packages
+[1.032s] copying resource/crazyflie_py -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/share/ament_index/resource_index/packages
+[1.034s] copying package.xml -> /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/share/crazyflie_py
+[1.034s] running install_egg_info
+[1.035s] Copying ../../../build/crazyflie_py/crazyflie_py.egg-info to /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages/crazyflie_py-1.0.3-py3.10.egg-info
+[1.038s] running install_scripts
+[1.062s] writing list of installed files to '/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/install.log'
+[1.090s] Invoked command in '/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_py' returned '0': AMENT_PREFIX_PATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces LD_LIBRARY_PATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages:/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/crazyflie_py build --build-base /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/build install --record /home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_py/install.log --single-version-externally-managed install_data

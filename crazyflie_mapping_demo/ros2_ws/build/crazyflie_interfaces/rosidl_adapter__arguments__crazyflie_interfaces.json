@@ -1,0 +1,27 @@
+{
+  "package_name": "crazyflie_interfaces",
+  "non_idl_tuples": [
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/ConnectionStatistics.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/ConnectionStatisticsArray.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/FullState.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/LogDataGeneric.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/Hover.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/LogBlock.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/Position.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/Status.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/TrajectoryPolynomialPiece.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:msg/VelocityWorld.msg",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/GoTo.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/Land.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/NotifySetpointsStop.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/SetGroupMask.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/StartTrajectory.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/Stop.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/Takeoff.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/UpdateParams.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/UploadTrajectory.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/RemoveLogging.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/AddLogging.srv",
+    "/home/odyssey/Desktop/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_interfaces:srv/Arm.srv"
+  ]
+}
