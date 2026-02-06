@@ -1,0 +1,12 @@
+[submodule "/home/odyssey/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation"]
+	path = /home/odyssey/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation
+	url = https://github.com/bitcraze/crazyflie-simulation.git
+[submodule "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger"]
+	path = /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger
+	url = https://github.com/knmcguire/crazyflie_ros2_multiranger
+[submodule "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2"]
+	path = /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2
+	url = https://github.com/IMRCLab/crazyswarm2
+[submodule "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie"]
+	path = /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie
+	url = https://github.com/knmcguire/ros_gz_crazyflie
