@@ -9,6 +9,8 @@ Last Update: 6 February 2026
 2. [Setting up the simulation](#setting-up-the-simulation)
 3. [Setting up the drones](#setting-up-the-drones)
 
+- [Errors! Errors galore!](#troubleshooting)
+
 ## Setting up the virtual machine
 
 ### Context
@@ -55,7 +57,7 @@ Last Update: 6 February 2026
 3. Clone this repository.
 
 ```
-git clone https://github.com/rimesaen/final-project.git
+git clone https://github.com/rimesaen/final-project.git --recursive
 ```
 
 5. Install some more stuff.
@@ -102,3 +104,13 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ## Setting up the drones
 
 TBA, for I am but a poor and humble farmer with naught the will to live.
+
+## Troubleshooting
+
+### The network has run away!
+
+Throw the command `sudo dhclient` into the terminal and pray the network comes back. 99% possibility that you will have to do this everytime you start the VM up.
+
+- There possibly exists a fix out there related to netplan, but alas, it is but a myth.
+
+### 
