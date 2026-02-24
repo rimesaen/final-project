@@ -14,6 +14,7 @@ Last Update: 24 February 2026
 > Flow and Multiranger equipped.
 
 24/2: Still alive!!
+24/2: Capable of wall-following. Efficiency debatable. Really likes to spin.
 
 ## #2: Something
 
