@@ -1,0 +1,89 @@
+[0.018s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie -- -j2 -l2
+[0.091s] [35m[1mConsolidate compiler generated dependencies of target crazyflieLinkCpp[0m
+[0.108s] [35m[1mConsolidate compiler generated dependencies of target teleop[0m
+[0.110s] [ 22%] Built target crazyflieLinkCpp
+[0.121s] [35m[1mConsolidate compiler generated dependencies of target crazyflie_cpp[0m
+[0.141s] [ 30%] Built target crazyflie_cpp
+[0.160s] [ 35%] Built target teleop
+[0.173s] [35m[1mConsolidate compiler generated dependencies of target crazyflie_server[0m
+[0.186s] [35m[1mConsolidate compiler generated dependencies of target scan[0m
+[0.210s] [ 40%] Built target crazyflie_server
+[0.217s] [ 45%] Built target scan
+[0.253s] [35m[1mConsolidate compiler generated dependencies of target listParams[0m
+[0.256s] [35m[1mConsolidate compiler generated dependencies of target listLogVariables[0m
+[0.302s] [ 50%] Built target listParams
+[0.303s] [ 55%] Built target listLogVariables
+[0.317s] [35m[1mConsolidate compiler generated dependencies of target listMemories[0m
+[0.329s] [35m[1mConsolidate compiler generated dependencies of target reboot[0m
+[0.352s] [ 60%] Built target listMemories
+[0.375s] [ 65%] Built target reboot
+[0.383s] [35m[1mConsolidate compiler generated dependencies of target battery[0m
+[0.408s] [35m[1mConsolidate compiler generated dependencies of target version[0m
+[0.429s] [ 70%] Built target battery
+[0.454s] [ 75%] Built target version
+[0.475s] [35m[1mConsolidate compiler generated dependencies of target console[0m
+[0.497s] [35m[1mConsolidate compiler generated dependencies of target comCheck[0m
+[0.525s] [ 80%] Built target console
+[0.550s] [35m[1mConsolidate compiler generated dependencies of target log[0m
+[0.550s] [ 85%] Built target comCheck
+[0.599s] [35m[1mConsolidate compiler generated dependencies of target downloadUSDLogfile[0m
+[0.606s] [ 90%] Built target log
+[0.629s] [35m[1mConsolidate compiler generated dependencies of target setParam[0m
+[0.650s] [ 95%] Built target downloadUSDLogfile
+[0.682s] [100%] Built target setParam
+[0.716s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie' returned '0': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie -- -j2 -l2
+[0.717s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie
+[0.742s] -- Install configuration: ""
+[0.745s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/comCheck
+[0.745s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/scan
+[0.745s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/listParams
+[0.747s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/listLogVariables
+[0.747s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/listMemories
+[0.748s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/reboot
+[0.748s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/battery
+[0.751s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/version
+[0.751s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/console
+[0.752s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/log
+[0.753s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/setParam
+[0.754s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/downloadUSDLogfile
+[0.755s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/teleop
+[0.759s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/crazyflie_server
+[0.759s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/crazyflie_server.py
+[0.759s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/chooser.py
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/vel_mux.py
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/cfmult.py
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/simple_mapper_multiranger.py
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/aideck_streamer.py
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/gui.py
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/lib/crazyflie/flash.py
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//launch
+[0.760s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//launch/launch.py
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//launch/teleop_launch.py
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//launch/launch_teleop2.py
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//config
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//config/motion_capture.yaml
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//config/aideck_streamer.yaml
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//config/config.rviz
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//config/server.yaml
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//config/crazyflies.yaml
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//config/teleop.yaml
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//urdf
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//urdf/cf2_assembly_with_props.dae
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//urdf/cf2_assembly.stl
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie//urdf/crazyflie_description.urdf
+[0.761s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/ament_index/resource_index/package_run_dependencies/crazyflie
+[0.762s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/ament_index/resource_index/parent_prefix_path/crazyflie
+[0.762s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/environment/ament_prefix_path.sh
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/environment/ament_prefix_path.dsv
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/environment/path.sh
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/environment/path.dsv
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/local_setup.bash
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/local_setup.sh
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/local_setup.zsh
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/local_setup.dsv
+[0.763s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/package.dsv
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/ament_index/resource_index/packages/crazyflie
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/cmake/crazyflieConfig.cmake
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/cmake/crazyflieConfig-version.cmake
+[0.763s] -- Up-to-date: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie/share/crazyflie/package.xml
+[0.774s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie' returned '0': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie

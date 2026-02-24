@@ -3,10 +3,13 @@
 	url = https://github.com/bitcraze/crazyflie-simulation.git
 [submodule "crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger"]
 	path = crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger
-	url = https://github.com/knmcguire/crazyflie_ros2_multiranger
+	url = https://github.com/rimesaen/cf-multiranger.git
 [submodule "crazyflie_mapping_demo/ros2_ws/src/crazyswarm2"]
 	path = crazyflie_mapping_demo/ros2_ws/src/crazyswarm2
 	url = https://github.com/IMRCLab/crazyswarm2
 [submodule "crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie"]
 	path = crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie
 	url = https://github.com/knmcguire/ros_gz_crazyflie
+[submodule "cf-client"]
+	path = cf-client
+	url = https://github.com/rimesaen/cf-client.git

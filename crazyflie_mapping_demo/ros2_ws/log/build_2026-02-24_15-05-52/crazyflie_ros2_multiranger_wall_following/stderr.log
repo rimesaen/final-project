@@ -1,0 +1,5 @@
+  File "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following/lib/python3.10/site-packages/crazyflie_ros2_multiranger_wall_following/wall_following/wall_following.py", line 31
+    def __init__(self, reference_distance_from_wall=0.3
+                                                    
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+

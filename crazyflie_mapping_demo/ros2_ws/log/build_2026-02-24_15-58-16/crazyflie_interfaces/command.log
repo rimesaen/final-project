@@ -1,0 +1,4 @@
+Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces': /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces -- -j2 -l2
+Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces' returned '0': /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces -- -j2 -l2
+Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces': /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces
+Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces' returned '0': /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_interfaces

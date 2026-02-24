@@ -1,0 +1,21 @@
+[0.712s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_control': PYTHONPATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ros_gz_crazyflie_control build --build-base /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_control/build install --record /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_control/install.log --single-version-externally-managed install_data
+[0.930s] running egg_info
+[0.931s] writing ../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info/PKG-INFO
+[0.933s] writing dependency_links to ../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info/dependency_links.txt
+[0.933s] writing entry points to ../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info/entry_points.txt
+[0.934s] writing requirements to ../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info/requires.txt
+[0.934s] writing top-level names to ../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info/top_level.txt
+[0.937s] reading manifest file '../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info/SOURCES.txt'
+[0.937s] writing manifest file '../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info/SOURCES.txt'
+[0.937s] running build
+[0.937s] running build_py
+[0.937s] running install
+[0.937s] running install_lib
+[0.937s] running install_data
+[0.939s] running install_egg_info
+[0.940s] removing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control/lib/python3.10/site-packages/ros_gz_crazyflie_control-0.0.0-py3.10.egg-info' (and everything under it)
+[0.940s] Copying ../../../build/ros_gz_crazyflie_control/ros_gz_crazyflie_control.egg-info to /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control/lib/python3.10/site-packages/ros_gz_crazyflie_control-0.0.0-py3.10.egg-info
+[0.941s] running install_scripts
+[0.955s] Installing control_services script to /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control/lib/ros_gz_crazyflie_control
+[0.956s] writing list of installed files to '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_control/install.log'
+[0.978s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_control' returned '0': PYTHONPATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ros_gz_crazyflie_control build --build-base /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_control/build install --record /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_control/install.log --single-version-externally-managed install_data

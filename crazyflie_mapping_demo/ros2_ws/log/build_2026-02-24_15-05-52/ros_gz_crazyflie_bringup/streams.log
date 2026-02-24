@@ -1,0 +1,46 @@
+[0.009s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup': AMENT_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/opt/ros/humble /usr/bin/cmake /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_bringup -DCMAKE_INSTALL_PREFIX=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup
+[0.069s] -- The C compiler identification is GNU 11.4.0
+[0.117s] -- The CXX compiler identification is GNU 11.4.0
+[0.124s] -- Detecting C compiler ABI info
+[0.195s] -- Detecting C compiler ABI info - done
+[0.200s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.200s] -- Detecting C compile features
+[0.201s] -- Detecting C compile features - done
+[0.203s] -- Detecting CXX compiler ABI info
+[0.283s] -- Detecting CXX compiler ABI info - done
+[0.287s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.288s] -- Detecting CXX compile features
+[0.288s] -- Detecting CXX compile features - done
+[0.291s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.409s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.476s] -- Found ros_gz_crazyflie_gazebo: 0.0.0 (/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo/share/ros_gz_crazyflie_gazebo/cmake)
+[0.477s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.517s] -- Configuring done
+[0.521s] -- Generating done
+[0.522s] -- Build files have been written to: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup
+[0.530s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup' returned '0': AMENT_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/opt/ros/humble /usr/bin/cmake /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_bringup -DCMAKE_INSTALL_PREFIX=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup
+[0.530s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup': AMENT_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/opt/ros/humble /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup -- -j2 -l2
+[0.560s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup' returned '0': AMENT_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/opt/ros/humble /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup -- -j2 -l2
+[0.560s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup': AMENT_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/opt/ros/humble /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup
+[0.568s] -- Install configuration: ""
+[0.568s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/launch
+[0.569s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/launch/crazyflie_simulation.launch.py
+[0.569s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/launch/crazyflie_real.launch.py
+[0.569s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/config
+[0.570s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/config/ros_gz_crazyflie_bridge.yaml
+[0.570s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ament_index/resource_index/package_run_dependencies/ros_gz_crazyflie_bringup
+[0.570s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ament_index/resource_index/parent_prefix_path/ros_gz_crazyflie_bringup
+[0.570s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/environment/ament_prefix_path.sh
+[0.570s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/environment/ament_prefix_path.dsv
+[0.570s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/environment/path.sh
+[0.571s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/environment/path.dsv
+[0.571s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/local_setup.bash
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/local_setup.sh
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/local_setup.zsh
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/local_setup.dsv
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/package.dsv
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ament_index/resource_index/packages/ros_gz_crazyflie_bringup
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/cmake/ros_gz_crazyflie_bringupConfig.cmake
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/cmake/ros_gz_crazyflie_bringupConfig-version.cmake
+[0.573s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/package.xml
+[0.577s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup' returned '0': AMENT_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/opt/ros/humble /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup
