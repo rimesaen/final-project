@@ -24,7 +24,9 @@ Last Update: 24 February 2026
 
 ## #3: Anything
 
-> Questionable. Too scared to work on it. Future us's problem.
+> Questionable. Will be attempting AI deck on this one. Still future us's problem.
+
+24/2: Thanks to their sacrifice, we managed to figure out how to assemble three decks onto the drone. Whether or not the decks all work: unconfirmed.
 
 ## #4: Everything
 
