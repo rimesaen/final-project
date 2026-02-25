@@ -103,7 +103,30 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ## Setting up the drones
 
-TBA, for I am but a poor and humble farmer with naught the will to live.
+### Drones assembly
+
+> The guide to assembling the drones can be found [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/).
+
+### Crazyradio
+
+> The guide to connecting the Crazyradio can be found [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/). There shouldn't be a need to flash new firmware if the Crazyradio has been flashed recently before.
+
+### Crazyflie client
+
+> The setup of cfclient follows this [guide](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/installation/install/) from bitcraze.
+
+1. From the final-project directory,
+
+```
+cd cf-client
+pip install -e .[dev]
+```
+
+2. To open cfclient, stay within the cf-client directory and run:
+
+```
+cfclient
+```
 
 ## Troubleshooting
 
