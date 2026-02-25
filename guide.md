@@ -128,6 +128,11 @@ pip install -e .[dev]
 cfclient
 ```
 
+### Crazyflie firmware
+
+- Likely will have to run `sudo apt install libncurses-dev`.
+- Use `make menuconfig` to access the menu config for wifi.
+
 ## Troubleshooting
 
 ### The network has run away!
@@ -135,5 +140,9 @@ cfclient
 Throw the command `sudo dhclient` into the terminal and pray the network comes back. 99% possibility that you will have to do this everytime you start the VM up.
 
 - There possibly exists a fix out there related to netplan, but alas, it is but a myth.
+
+### Doctor, quick! The patient is unresponsive!
+
+Try starting the drone up in bootloader mode (press and hold power button for 3 seconds) and doing a cold boot on cfclient.
 
 ### 

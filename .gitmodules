@@ -13,3 +13,9 @@
 [submodule "cf-client"]
 	path = cf-client
 	url = https://github.com/rimesaen/cf-client.git
+[submodule "crazyflie-firmware"]
+	path = crazyflie-firmware
+	url = https://github.com/bitcraze/crazyflie-firmware.git
+[submodule "aideck-gap8-examples"]
+	path = aideck-gap8-examples
+	url = https://github.com/bitcraze/aideck-gap8-examples.git
