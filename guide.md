@@ -7,7 +7,19 @@ Last Update: 6 February 2026
 ## Table of Contents
 1. [Setting up the virtual machine](#setting-up-the-virtual-machine)
 2. [Setting up the simulation](#setting-up-the-simulation)
+
+    - [Testing out the simulation (manual control)](#testing-out-the-simulation-manual-control)
+    - [Testing out the simulation (wall-following)](#testing-out-the-simulation-wall-following)
+    - [Testing out the real world (manual control)](#testing-out-the-real-world-manual-control)
+    - [Testing out the real world (wall-following)](#testing-out-the-real-world-wall-following)
+
 3. [Setting up the drones](#setting-up-the-drones)
+
+    - [Drones assembly](#drones-assembly)
+    - [Crazyradio](#crazyradio)
+    - [Crazyflie client](#crazyflie-client)
+    - [Crazyflie firmware](#crazyflie-firmware)
+    - [Wi-Fi connection](#wi-fi-connection)
 
 - [Errors! Errors galore!](#troubleshooting)
 
@@ -81,7 +93,7 @@ colcon build --cmake-args -DBUILD_TESTING=ON
 
 6. Voila! That should work! Hopefully!
 
-### Testing out the simulation (simple mapping, manually controlled)
+### Testing out the simulation (manual control)
 
 1. First terminal:
 
@@ -98,6 +110,18 @@ ros2 launch crazyflie_ros2_multiranger_bringup simple_mapper_simulation.launch.p
 source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
+
+### Testing out the simulation (wall-following)
+
+> TBA with Lara's updates.
+
+### Testing out the real world (manual control)
+
+> TBA once I find my will to live.
+
+### Testing out the real world (wall-following)
+
+> TBA once I find my will to exercise.
 
 3. Voila x2! That oughta work!
 
@@ -130,8 +154,41 @@ cfclient
 
 ### Crazyflie firmware
 
-- Likely will have to run `sudo apt install libncurses-dev`.
-- Use `make menuconfig` to access the menu config for wifi.
+> The setup of the firmware (specifically for the AI deck) follows these guides [1](https://www.bitcraze.io/documentation/tutorials/getting-started-with-aideck/#flash-wifi-example) [2](https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/building-and-flashing/build/). The AI deck hasn't worked yet, so follow with caution!!
+
+1. Ensure that the AI deck is the only deck connected.
+
+2. In cfclient, flash the newest firmware. Writing to the AI deck should be mentioned in the progress.
+
+    - If it works, you should see `ESP32: I (910) SYS: Initialized` in the console of cfclient when the drone is connected to (the console can be opened from *View*).
+
+#### Wi-Fi connection
+
+> NOT WORKING!!! I REPEAT, NOT WORKING!!!!!!
+
+1. Navigate to crazyflie-firmware and throw out the following commands:
+
+    - The make distclean is to clean out previous configuration files, just in case.
+
+```
+make distclean
+make cf2_defconfig
+```
+
+2. Change configurations by going into menu config.
+
+```
+make menuconfig
+```
+
+3. Once done,
+
+    - During `make cload`, press and hold the power button of the drone for 3 seconds to enter bootloader mode.
+
+```
+make -j$(nproc)
+make cload
+```
 
 ## Troubleshooting
 
@@ -144,5 +201,3 @@ Throw the command `sudo dhclient` into the terminal and pray the network comes b
 ### Doctor, quick! The patient is unresponsive!
 
 Try starting the drone up in bootloader mode (press and hold power button for 3 seconds) and doing a cold boot on cfclient.
-
-### 
