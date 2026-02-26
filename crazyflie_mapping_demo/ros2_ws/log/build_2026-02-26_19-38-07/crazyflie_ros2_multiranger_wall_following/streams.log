@@ -1,0 +1,19 @@
+[0.986s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_wall_following': PYTHONPATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_wall_following/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_wall_following/build --no-deps symlink_data
+[1.426s] running develop
+[1.669s] running egg_info
+[1.669s] creating crazyflie_ros2_multiranger_wall_following.egg-info
+[1.670s] writing crazyflie_ros2_multiranger_wall_following.egg-info/PKG-INFO
+[1.670s] writing dependency_links to crazyflie_ros2_multiranger_wall_following.egg-info/dependency_links.txt
+[1.672s] writing entry points to crazyflie_ros2_multiranger_wall_following.egg-info/entry_points.txt
+[1.672s] writing requirements to crazyflie_ros2_multiranger_wall_following.egg-info/requires.txt
+[1.674s] writing top-level names to crazyflie_ros2_multiranger_wall_following.egg-info/top_level.txt
+[1.676s] writing manifest file 'crazyflie_ros2_multiranger_wall_following.egg-info/SOURCES.txt'
+[1.678s] reading manifest file 'crazyflie_ros2_multiranger_wall_following.egg-info/SOURCES.txt'
+[1.680s] writing manifest file 'crazyflie_ros2_multiranger_wall_following.egg-info/SOURCES.txt'
+[1.684s] running build_ext
+[1.684s] Creating /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following/lib/python3.10/site-packages/crazyflie-ros2-multiranger-wall-following.egg-link (link to .)
+[1.687s] Installing wall_following_multiranger script to /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following/lib/crazyflie_ros2_multiranger_wall_following
+[1.687s] 
+[1.687s] Installed /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_wall_following
+[1.688s] running symlink_data
+[1.737s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_wall_following' returned '0': PYTHONPATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_wall_following/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_wall_following/build --no-deps symlink_data
