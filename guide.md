@@ -98,6 +98,7 @@ colcon build --cmake-args -DBUILD_TESTING=ON
 1. First terminal:
 
 ```
+source /opt/ros/humble/setup.bash
 source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
 export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
 export LIBGL_ALWAYS_SOFTWARE=1
@@ -107,23 +108,70 @@ ros2 launch crazyflie_ros2_multiranger_bringup simple_mapper_simulation.launch.p
 2. Second terminal:
 
 ```
-source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+source /opt/ros/humble/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 ### Testing out the simulation (wall-following)
 
-> TBA with Lara's updates.
+> Worked previously, but now doesn't... Will also be updating with improvements to the algorithm.
+
+1. First terminal:
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_simulation.launch.py
+```
+
+2. To stop the drone:
+
+```
+source /opt/ros/humble/setup.bash
+ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
+```
 
 ### Testing out the real world (manual control)
 
-> TBA once I find my will to live.
+> Not yet tested!
+
+1. First terminal:
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
+ros2 launch crazyflie_ros2_multiranger_bringup simple_mapper_real.launch.py
+```
+
+2. Second terminal:
+
+```
+source /opt/ros/humble/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
 
 ### Testing out the real world (wall-following)
 
-> TBA once I find my will to exercise.
+> Not yet tested!
 
-3. Voila x2! That oughta work!
+1. First terminal:
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.py
+```
+
+2. To stop the drone:
+
+```
+source /opt/ros/humble/setup.bash
+ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
+```
 
 ## Setting up the drones
 
