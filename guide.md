@@ -187,14 +187,25 @@ ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 
 > The setup of cfclient follows this [guide](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/installation/install/) from bitcraze.
 
-1. From the final-project directory,
+> Due to rational fears of the future (i.e. cfclient has a conflict with OpenCV), cfclient should be installed on a virtual environment.
+
+1. Create the virtual environment. From the project's root directory,
+
+> To deactivate, simply run `deactivate`.
+
+```
+python3 -m venv client-venv
+source client-venv/bin/activate
+```
+
+2. Everything should already be installed, but just in case, run:
 
 ```
 cd cf-client
 pip install -e .[dev]
 ```
 
-2. To open cfclient, stay within the cf-client directory and run:
+3. To open cfclient, stay within the cf-client directory and run:
 
 ```
 cfclient
@@ -249,3 +260,7 @@ Throw the command `sudo dhclient` into the terminal and pray the network comes b
 ### Doctor, quick! The patient is unresponsive!
 
 Try starting the drone up in bootloader mode (press and hold power button for 3 seconds) and doing a cold boot on cfclient.
+
+### GitHub wants authentication but it's not letting me in!
+
+Use `gh auth login` instead of whatever they're suggesting. Unless they're suggesting `gh auth login`, in which case, do that.
