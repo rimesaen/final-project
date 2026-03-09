@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_bringup
+CMAKE_SOURCE_DIR = /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_bringup
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/ros_gz_crazyflie_bringup/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

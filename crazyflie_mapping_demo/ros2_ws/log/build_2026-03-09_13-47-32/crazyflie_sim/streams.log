@@ -1,0 +1,143 @@
+[0.011s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_sim -DBUILD_TESTING=ON -DCMAKE_INSTALL_PREFIX=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim
+[0.067s] -- The C compiler identification is GNU 11.4.0
+[0.116s] -- The CXX compiler identification is GNU 11.4.0
+[0.126s] -- Detecting C compiler ABI info
+[0.199s] -- Detecting C compiler ABI info - done
+[0.208s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.208s] -- Detecting C compile features
+[0.208s] -- Detecting C compile features - done
+[0.209s] -- Detecting CXX compiler ABI info
+[0.295s] -- Detecting CXX compiler ABI info - done
+[0.302s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.302s] -- Detecting CXX compile features
+[0.303s] -- Detecting CXX compile features - done
+[0.307s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.428s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.589s] -- Found ament_cmake_pytest: 1.3.13 (/opt/ros/humble/share/ament_cmake_pytest/cmake)
+[1.676s] -- Configuring done
+[1.677s] -- Generating done
+[1.679s] -- Build files have been written to: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim
+[1.683s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim' returned '0': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyswarm2/crazyflie_sim -DBUILD_TESTING=ON -DCMAKE_INSTALL_PREFIX=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim
+[1.691s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim -- -j2 -l2
+[1.801s] Built target ament_cmake_python_copy_crazyflie_sim_setup
+[1.808s] Built target ament_cmake_python_copy_crazyflie_sim
+[2.191s] running install_scripts
+[2.196s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.196s]   warnings.warn(
+[2.213s] running egg_info
+[2.213s] creating crazyflie_sim.egg-info
+[2.213s] writing crazyflie_sim.egg-info/PKG-INFO
+[2.215s] writing dependency_links to crazyflie_sim.egg-info/dependency_links.txt
+[2.216s] writing entry points to crazyflie_sim.egg-info/entry_points.txt
+[2.219s] writing top-level names to crazyflie_sim.egg-info/top_level.txt
+[2.220s] writing manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.220s] reading manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.220s] writing manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.235s] running egg_info
+[2.235s] writing crazyflie_sim.egg-info/PKG-INFO
+[2.237s] writing dependency_links to crazyflie_sim.egg-info/dependency_links.txt
+[2.240s] writing entry points to crazyflie_sim.egg-info/entry_points.txt
+[2.240s] writing top-level names to crazyflie_sim.egg-info/top_level.txt
+[2.242s] reading manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.242s] writing manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.249s] Installing crazyflie_server script to scripts
+[2.260s] Built target ament_cmake_python_build_crazyflie_sim_egg
+[2.289s] Built target ament_cmake_python_build_crazyflie_sim_scripts
+[2.299s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim' returned '0': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --build /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim -- -j2 -l2
+[2.299s] Invoking command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim
+[2.307s] -- Install configuration: ""
+[2.307s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/environment/pythonpath.sh
+[2.308s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/environment/pythonpath.dsv
+[2.308s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info
+[2.308s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/top_level.txt
+[2.308s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/SOURCES.txt
+[2.308s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/entry_points.txt
+[2.308s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/PKG-INFO
+[2.309s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/dependency_links.txt
+[2.309s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/lib/crazyflie_sim/
+[2.309s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/lib/crazyflie_sim//crazyflie_server
+[2.309s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim
+[2.309s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/sim_data_types.py
+[2.309s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_sil.py
+[2.310s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/__init__.py
+[2.310s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization
+[2.310s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/record_states.py
+[2.310s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data
+[2.310s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model
+[2.310s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model/cf.mtl
+[2.310s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model/cf.obj
+[2.311s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env
+[2.311s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/lake_pier.jpg
+[2.311s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/aerodynamics_workshop.jpg
+[2.311s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/crosswalk.jpg
+[2.311s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/env.jpg
+[2.312s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/museumplein.jpg
+[2.312s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/lago_disola.jpg
+[2.312s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/studio_garden.jpg
+[2.313s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/abandoned_greenhouse.jpg
+[2.313s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/derelict_overpass.jpg
+[2.313s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/aviation_museum.jpg
+[2.313s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/machine_shop.jpg
+[2.313s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/peppermint_powerplant.jpg
+[2.314s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/README.md
+[2.314s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/blender.py
+[2.314s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/README.md
+[2.314s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/rviz.py
+[2.314s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/pdf.py
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/np.py
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/pinocchio
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/pinocchio/crazyflie2.urdf
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/dynobench
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/dynobench/crazyflie2.yaml
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2
+[2.315s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/rho_S.pth
+[2.316s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/rho_L.pth
+[2.316s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/phi_S.pth
+[2.316s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/phi_G.pth
+[2.316s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/phi_L.pth
+[2.316s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/none.py
+[2.316s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/dynobench.py
+[2.316s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/pinocchio.py
+[2.317s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/neuralswarm.py
+[2.317s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_server.py
+[2.350s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim'...
+[2.350s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/__init__.py'...
+[2.350s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/dynobench'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/pinocchio'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/dynobench.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/neuralswarm.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/none.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/np.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/pinocchio.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_server.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_sil.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/sim_data_types.py'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/blender.py'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env'...
+[2.351s] Listing '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/pdf.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/record_states.py'...
+[2.351s] Compiling '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/rviz.py'...
+[2.355s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/ament_index/resource_index/package_run_dependencies/crazyflie_sim
+[2.355s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/ament_index/resource_index/parent_prefix_path/crazyflie_sim
+[2.355s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/environment/ament_prefix_path.sh
+[2.355s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/environment/ament_prefix_path.dsv
+[2.356s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/environment/path.sh
+[2.356s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/environment/path.dsv
+[2.356s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/local_setup.bash
+[2.356s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/local_setup.sh
+[2.356s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/local_setup.zsh
+[2.357s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/local_setup.dsv
+[2.357s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/package.dsv
+[2.357s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/ament_index/resource_index/packages/crazyflie_sim
+[2.357s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/cmake/crazyflie_simConfig.cmake
+[2.357s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/cmake/crazyflie_simConfig-version.cmake
+[2.357s] -- Installing: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim/share/crazyflie_sim/package.xml
+[2.361s] Invoked command in '/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim' returned '0': CMAKE_PREFIX_PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_interfaces:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_gazebo:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_sim:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_examples:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_control:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_simple_mapper:/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_py:/opt/ros/humble /usr/bin/cmake --install /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_sim

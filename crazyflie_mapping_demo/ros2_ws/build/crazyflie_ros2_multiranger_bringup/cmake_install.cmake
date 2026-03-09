@@ -1,4 +1,4 @@
-# Install script for directory: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger/crazyflie_ros2_multiranger_bringup
+# Install script for directory: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-multiranger/crazyflie_ros2_multiranger_bringup
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/crazyflie_ros2_multiranger_bringup/" TYPE DIRECTORY FILES
-    "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger/crazyflie_ros2_multiranger_bringup/launch"
-    "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger/crazyflie_ros2_multiranger_bringup/config"
+    "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-multiranger/crazyflie_ros2_multiranger_bringup/launch"
+    "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-multiranger/crazyflie_ros2_multiranger_bringup/config"
     )
 endif()
 
@@ -105,7 +105,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/crazyflie_ros2_multiranger_bringup" TYPE FILE FILES "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger/crazyflie_ros2_multiranger_bringup/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/crazyflie_ros2_multiranger_bringup" TYPE FILE FILES "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-multiranger/crazyflie_ros2_multiranger_bringup/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

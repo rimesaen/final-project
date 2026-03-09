@@ -296,7 +296,7 @@ crazyflie_ros2_multiranger_bringup_BINARY_DIR:STATIC=/home/odyssey/final-project
 crazyflie_ros2_multiranger_bringup_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-crazyflie_ros2_multiranger_bringup_SOURCE_DIR:STATIC=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger/crazyflie_ros2_multiranger_bringup
+crazyflie_ros2_multiranger_bringup_SOURCE_DIR:STATIC=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-multiranger/crazyflie_ros2_multiranger_bringup
 
 //The directory containing a CMake configuration file for ros_gz_crazyflie_bringup.
 ros_gz_crazyflie_bringup_DIR:PATH=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/ros_gz_crazyflie_bringup/share/ros_gz_crazyflie_bringup/cmake
@@ -386,7 +386,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/crazyflie_ros2_multiranger/crazyflie_ros2_multiranger_bringup
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-multiranger/crazyflie_ros2_multiranger_bringup
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
