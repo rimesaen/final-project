@@ -31,7 +31,7 @@ Last Update: 6 February 2026
 > - Operating System: *Ubuntu 64-bit, 22.04.5 LTS*
 > - Hard Disk: *80 GB (tentative)*
 > - Memory: *8000 MB (tentative)*
-> - Network connection: *NAT*
+> - Network connection: *NAT* (may need to change for the AI deck to work; not so sure yet)
 
 ### Procedure
 
@@ -114,8 +114,6 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ### Testing out the simulation (wall-following)
 
-> Worked previously, but now doesn't... Will also be updating with improvements to the algorithm.
-
 1. First terminal:
 
 ```
@@ -135,7 +133,7 @@ ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 
 ### Testing out the real world (manual control)
 
-> Not yet tested!
+> High chance of going on a rampage. Unclear cause.
 
 1. First terminal:
 
@@ -154,8 +152,6 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 ### Testing out the real world (wall-following)
-
-> Not yet tested!
 
 1. First terminal:
 
@@ -264,3 +260,16 @@ Try starting the drone up in bootloader mode (press and hold power button for 3 
 ### GitHub wants authentication but it's not letting me in!
 
 Use `gh auth login` instead of whatever they're suggesting. Unless they're suggesting `gh auth login`, in which case, do that.
+
+### Colcon build? More like colcon... doesn't build...
+
+Pull a quick little
+
+```
+cd ~/final-project/crazyflie_mapping_demo/ros2_ws
+rm -rf build/ install/ log/
+```
+
+### Simulation not running! Map not found! Or something!
+
+Check the logs; it's highly likely that the numpy version is wrong. Try setting up cfclient first.
