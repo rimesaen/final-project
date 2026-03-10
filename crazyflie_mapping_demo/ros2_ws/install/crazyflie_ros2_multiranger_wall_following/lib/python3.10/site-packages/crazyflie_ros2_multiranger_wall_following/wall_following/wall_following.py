@@ -15,104 +15,96 @@ from enum import Enum
 
 class WallFollowing():
     class StateWallFollowing(Enum):
-        FORWARD = 1
-        HOVER = 2
-        TURN_TO_FIND_WALL = 3
-        TURN_TO_ALIGN_TO_WALL = 4
-        FORWARD_ALONG_WALL = 5
-        ROTATE_AROUND_WALL = 6
-        ROTATE_IN_CORNER = 7
-        FIND_CORNER = 8
+        HOVER = 1       # hovering after takeoff
+        FORWARD = 2     # move forward to correct distance from wall
+        BACKWARD = 3    # move backward to correct distance from wall
+        TURN_TO_FIND_WALL = 4
+        TURN_TO_ALIGN_TO_WALL = 5
+        FORWARD_ALONG_WALL = 6
+        ROTATE_OUTER_CORNER = 7
+        ROTATE_INNER_CORNER = 8
+        FIND_CORNER = 9
+        STOP = 10       # completed mission
 
     class WallFollowingDirection(Enum):
-        LEFT = 1
-        RIGHT = -1
+        CCW = 1
+        CW = -1
 
-    def __init__(self, reference_distance_from_wall=0.58,
+    def __init__(self, 
+                 wall_following_direction=WallFollowingDirection.CCW,
+                 reference_distance_from_wall=0.5,
                  max_forward_speed=0.2,
                  max_turn_rate=0.5,
-                 wall_following_direction=WallFollowingDirection.LEFT,
-                 first_run=False,
+                 first_run=True,
                  prev_heading=0.0,
-                 wall_angle=0.0,
+                 wall_angle=math.pi/2,
                  around_corner_back_track=False,
                  state_start_time=0.0,
-                 ranger_value_buffer=0.2,
+                 ranger_value_buffer=0.05,
                  angle_value_buffer=0.1,
                  range_lost_threshold=0.3,
                  in_corner_angle=0.8,
                  wait_for_measurement_seconds=1.0,
-                 init_state=StateWallFollowing.FORWARD):
+                 init_state=StateWallFollowing.HOVER,
+                 position_x = 0.0,
+                 position_y = 0.0,):
         """
         __init__ function for the WallFollowing class
-
-        reference_distance_from_wall is the distance from the wall that the Crazyflie
-            should try to keep
-        max_forward_speed is the maximum speed the Crazyflie should fly forward
-        max_turn_rate is the maximum turn rate the Crazyflie should turn with
-        wall_following_direction is the direction the Crazyflie should follow the wall
-            (WallFollowingDirection Enum)
-        first_run is a boolean that is True if the Crazyflie is in the first run of the
-            wall following demo
-        prev_heading is the heading of the Crazyflie in the previous state (in rad)
-        wall_angle is the angle of the wall in the previous state (in rad)
-        around_corner_back_track is a boolean that is True if the Crazyflie is in the
-            around corner state and should back track
-        state_start_time is the time when the Crazyflie entered the current state (in s)
-        ranger_value_buffer is the buffer value for the ranger measurements (in m)
-        angle_value_buffer is the buffer value for the angle measurements (in rad)
-        range_lost_threshold is the threshold for when the Crazyflie should stop
-            following the wall (in m)
-        in_corner_angle is the angle the Crazyflie should turn when it is in the corner (in rad)
-        wait_for_measurement_seconds is the time the Crazyflie should wait for a
-            measurement before it starts the wall following demo (in s)
-        init_state is the initial state of the Crazyflie (StateWallFollowing Enum)
-        self.state is a shared state variable that is used to keep track of the current
-            state of the Crazyflie's wall following
-        self.time_now is a shared state variable that is used to keep track of the current (in s)
-        self.pred_x and self.pred_y are predictions of position used in check_near_start (in m)
         """
+        self.reference_distance_from_wall = reference_distance_from_wall    # the distance from the wall that the Crazyflie should try to keep
+        self.max_forward_speed = max_forward_speed      # the maximum speed the Crazyflie should fly forward
+        self.max_turn_rate = max_turn_rate              # the maximum turn rate the Crazyflie should turn with
+        self.wall_following_direction_value = float(wall_following_direction.value) # the direction the Crazyflie should follow the wall (WallFollowingDirection Enum)
+        self.first_run = first_run          # True if the Crazyflie is in the first run of the wall following demo
+        self.prev_heading = prev_heading    # the heading of the Crazyflie in the previous state (in rad)
+        self.wall_angle = wall_angle        # the angle of the wall in the previous state (in rad)
+        self.around_corner_back_track = around_corner_back_track    # True if the Crazyflie is in the around corner state and should back track
+        self.state_start_time = state_start_time            # the time when the Crazyflie entered the current state (in s)
+        self.ranger_value_buffer = ranger_value_buffer      # the buffer value for the ranger measurements (in m)
+        self.angle_value_buffer = angle_value_buffer        # the buffer value for the angle measurements (in rad)
+        self.range_threshold_lost = range_lost_threshold    # the threshold for when the Crazyflie should stop following the wall (in m)
+        self.in_corner_angle = in_corner_angle              # the angle the Crazyflie should turn when it is in the corner (in rad)
+        self.wait_for_measurement_seconds = wait_for_measurement_seconds    # the time the Crazyflie should wait for a measurement before it starts the wall following demo (in s)
 
-        self.reference_distance_from_wall = reference_distance_from_wall
-        self.max_forward_speed = max_forward_speed
-        self.max_turn_rate = max_turn_rate
-        self.wall_following_direction_value = float(wall_following_direction.value)
-        self.first_run = first_run
-        self.prev_heading = prev_heading
-        self.wall_angle = wall_angle
-        self.around_corner_back_track = around_corner_back_track
-        self.state_start_time = state_start_time
-        self.ranger_value_buffer = ranger_value_buffer
-        self.angle_value_buffer = angle_value_buffer
-        self.range_threshold_lost = range_lost_threshold
-        self.in_corner_angle = in_corner_angle
-        self.wait_for_measurement_seconds = wait_for_measurement_seconds
-
-        self.first_run = True
-        self.state = init_state
-        self.time_now = 0.0
+        self.state = init_state # the current state of the Crazyflie's wall following
+        self.time_now = 0.0     # the current time
         self.speed_redux_corner = 3.0
         self.speed_redux_straight = 2.0
 
-        self.pred_x = 0.0
-        self.pred_y = 0.0
-        self.start_distance_threshold = 0.3 # Stop when within 30cm of start
-        self.has_left_start = False         # Prevent immediate stopping
+        self.position_x = position_x
+        self.position_y = position_y
+        self.start_x = None
+        self.start_y = None
+        self.exploring = False  # True when has left starting point
 
-    # Helper function
+    # Helper functions
     def value_is_close_to(self, real_value, checked_value, margin):
+        """
+        Check to see if two values are close
+        """
         if real_value > checked_value - margin and real_value < checked_value + margin:
             return True
         else:
             return False
 
     def wrap_to_pi(self, number):
+        """
+        Normalizes number to stay within the range of -pi to pi
+        """
         if number > math.pi:
             return number - 2 * math.pi
         elif number < -math.pi:
             return number + 2 * math.pi
         else:
             return number
+    
+    def distance_from_start(self):
+        """
+        Get distance from current position to starting position
+        """
+        if self.start_x == None:
+            return None
+        return math.sqrt((self.position_x - self.start_x)**2 + (self.position_y - self.start_y)**2)
 
     # Command functions
     def command_turn(self, reference_rate):
@@ -140,8 +132,7 @@ class WallFollowing():
             velocity_y = 0.0
         else:
             if side_range > wanted_distance_from_corner:
-                velocity_y = self.wall_following_direction_value * \
-                    (-1.0 * self.max_forward_speed / self.speed_redux_corner)
+                velocity_y = self.wall_following_direction_value * (-1.0 * self.max_forward_speed / self.speed_redux_corner)
             else:
                 velocity_y = self.wall_following_direction_value * (self.max_forward_speed / self.speed_redux_corner)
             rate_yaw = 0.0
@@ -156,31 +147,28 @@ class WallFollowing():
         rate_yaw = 0.0
         return velocity_x, velocity_y, rate_yaw
 
-    def command_forward_along_wall(self, side_range):
+    def command_forward_along_wall(self, front_range):
         """
-        Command the Crazyflie to fly forward along the wall
-            while controlling it's distance to it
+        Command the Crazyflie to fly forward along the wall while controlling its distance to it
 
         side_range is defined in m
         velocity_x and velocity_y is defined in m/s
         """
-        velocity_x = self.max_forward_speed
-        velocity_y = 0.0
+        velocity_x = 0.0
+        velocity_y = self.wall_following_direction_value * self.max_forward_speed
         check_distance_wall = self.value_is_close_to(
-            self.reference_distance_from_wall, side_range, self.ranger_value_buffer)
+            self.reference_distance_from_wall, front_range, self.ranger_value_buffer)
         if not check_distance_wall:
-            if side_range > self.reference_distance_from_wall:
-                velocity_y = self.wall_following_direction_value * \
-                    (-1.0 * self.max_forward_speed / self.speed_redux_straight)
+            if front_range > self.reference_distance_from_wall:
+                velocity_x = -1.0 * self.max_forward_speed / self.speed_redux_straight
             else:
-                velocity_y = self.wall_following_direction_value * (self.max_forward_speed / self.speed_redux_straight)
+                velocity_x = self.max_forward_speed / self.speed_redux_straight
         #print(f"x : {velocity_y}, y : {-1*velocity_x}")
-        return -1*velocity_x, velocity_y
+        return velocity_y, velocity_x
 
     def command_turn_around_corner_and_adjust(self, radius, side_range):
         """
-        Command the Crazyflie to turn around the corner
-            and adjust it's distance to the corner
+        Command the Crazyflie to turn around the corner and adjust its distance to the corner
 
         radius is defined in m
         side_range is defined in m
@@ -197,18 +185,7 @@ class WallFollowing():
                     (-1.0 * self.max_forward_speed / self.speed_redux_corner)
             else:
                 velocity_y = self.wall_following_direction_value * (self.max_forward_speed / self.speed_redux_corner)
-        return -1*velocity_x, velocity_y, rate_yaw
-
-    def check_near_start(self, command_velocity_x, command_velocity_y, current_heading):
-        """
-        Check if the Crazyflie has again neared the starting point after leaving it
-        """
-        dt = 0.01  
-        self.pred_x += (command_velocity_x * math.cos(current_heading) - command_velocity_y * math.sin(current_heading)) * dt
-        self.pred_y += (command_velocity_x * math.sin(current_heading) + command_velocity_y * math.cos(current_heading)) * dt
-
-        distance_to_start = math.sqrt(self.pred_x**2 + self.pred_y**2)
-        return distance_to_start
+        return self.wall_following_direction_value*velocity_x, velocity_y, rate_yaw
 
     # state machine helper functions
     def state_transition(self, new_state):
@@ -222,7 +199,7 @@ class WallFollowing():
 
     # Wall following State machine
     def wall_follower(self, front_range, side_range, current_heading,
-                      wall_following_direction, time_outer_loop):
+                      wall_following_direction, time_outer_loop, position_x, position_y):
         """
         wall_follower is the main function of the wall following state machine.
         It takes the current range measurements of the front range and side range
@@ -247,17 +224,33 @@ class WallFollowing():
             self.prev_heading = current_heading
             self.around_corner_back_track = False
             self.first_run = False
+        
+        self.position_x = position_x
+        self.position_y = position_y
 
         # -------------- Handle state transitions ---------------- #
-        if self.state == self.StateWallFollowing.FORWARD:
+        # assuming that the drone starts off facing and perpendicular to the wall.
+        if self.state == self.StateWallFollowing.HOVER:
             if front_range < self.reference_distance_from_wall + self.ranger_value_buffer:
-                self.state = self.state_transition(self.StateWallFollowing.TURN_TO_FIND_WALL)
-        elif self.state == self.StateWallFollowing.HOVER:
-            # print('hover')
-            pass
+                self.state = self.state_transition(self.StateWallFollowing.BACKWARD)
+            elif front_range > self.reference_distance_from_wall + self.ranger_value_buffer:
+                self.state = self.state_transition(self.StateWallFollowing.FORWARD)
+            else:
+                self.state = self.state_transition(self.StateWallFollowing.FORWARD_ALONG_WALL)
+                self.start_x = self.position_x
+                self.start_y = self.position_y
+        elif self.state == self.StateWallFollowing.FORWARD:
+            if front_range < self.reference_distance_from_wall + self.ranger_value_buffer:
+                self.state = self.state_transition(self.StateWallFollowing.FORWARD_ALONG_WALL)
+                self.start_x = self.position_x
+                self.start_y = self.position_y
+        elif self.state == self.StateWallFollowing.BACKWARD:
+            if front_range > self.reference_distance_from_wall - self.ranger_value_buffer:
+                self.state = self.state_transition(self.StateWallFollowing.FORWARD_ALONG_WALL)
+                self.start_x = self.position_x
+                self.start_y = self.position_y
         elif self.state == self.StateWallFollowing.TURN_TO_FIND_WALL:
-            # Turn until 45 degrees from wall such that the front and side range sensors
-            #   can detect the wall
+            # Turn until 45 degrees from wall such that the front and side range sensors can detect the wall
             side_range_check = side_range < (self.reference_distance_from_wall /
                                              math.cos(math.pi/4) + self.ranger_value_buffer)
             front_range_check = front_range < (self.reference_distance_from_wall /
@@ -269,8 +262,8 @@ class WallFollowing():
                     (math.pi/2 - math.atan(front_range / side_range) + self.angle_value_buffer)
                 self.state = self.state_transition(self.StateWallFollowing.TURN_TO_ALIGN_TO_WALL)
             # If went too far in heading and lost the wall, go to find corner.
-            if side_range < self.reference_distance_from_wall + self.ranger_value_buffer and \
-                    front_range > self.reference_distance_from_wall + self.range_threshold_lost:
+            if front_range < self.reference_distance_from_wall + self.ranger_value_buffer and \
+                    side_range > self.reference_distance_from_wall + self.range_threshold_lost:
                 self.around_corner_back_track = False
                 self.prev_heading = current_heading
                 self.state = self.state_transition(self.StateWallFollowing.FIND_CORNER)
@@ -280,29 +273,35 @@ class WallFollowing():
             if align_wall_check:
                 self.state = self.state_transition(self.StateWallFollowing.FORWARD_ALONG_WALL)
         elif self.state == self.StateWallFollowing.FORWARD_ALONG_WALL:
-            # If side range is out of reach,
-            #    end of the wall is reached
-            if side_range > self.reference_distance_from_wall + self.range_threshold_lost:
+            # if front range is out of reach, then end of the wall is reached
+            if front_range > self.reference_distance_from_wall + self.range_threshold_lost:
                 self.state = self.state_transition(self.StateWallFollowing.FIND_CORNER)
-            # If front range is small
-            #    then corner is reached
-            if front_range < self.reference_distance_from_wall + self.ranger_value_buffer:
+            # side range is small, then inner corner is reached
+            elif side_range < self.reference_distance_from_wall + self.ranger_value_buffer:
                 self.prev_heading = current_heading
-                self.state = self.state_transition(self.StateWallFollowing.ROTATE_IN_CORNER)
-        elif self.state == self.StateWallFollowing.ROTATE_AROUND_WALL:
-            if front_range < self.reference_distance_from_wall + self.ranger_value_buffer:
+                self.state = self.state_transition(self.StateWallFollowing.ROTATE_INNER_CORNER)
+        elif self.state == self.StateWallFollowing.ROTATE_OUTER_CORNER:
+            if side_range < self.reference_distance_from_wall + self.ranger_value_buffer:
                 self.state = self.state_transition(self.StateWallFollowing.TURN_TO_FIND_WALL)
-        elif self.state == self.StateWallFollowing.ROTATE_IN_CORNER:
+        elif self.state == self.StateWallFollowing.ROTATE_INNER_CORNER:
             check_heading_corner = self.value_is_close_to(
                 math.fabs(self.wrap_to_pi(current_heading-self.prev_heading)),
                 self.in_corner_angle, self.angle_value_buffer)
             if check_heading_corner:
                 self.state = self.state_transition(self.StateWallFollowing.TURN_TO_FIND_WALL)
         elif self.state == self.StateWallFollowing.FIND_CORNER:
-            if side_range <= self.reference_distance_from_wall:
-                self.state = self.state_transition(self.StateWallFollowing.ROTATE_AROUND_WALL)
+            if front_range <= self.reference_distance_from_wall:
+                self.state = self.state_transition(self.StateWallFollowing.ROTATE_OUTER_CORNER)
         else:
-            self.state = self.state_transition(self.StateWallFollowing.HOVER)
+            self.state = self.state_transition(self.StateWallFollowing.STOP)
+        
+        if self.start_x != None:
+            distance_from_start = self.distance_from_start()
+            if distance_from_start > 0.1:
+                self.exploring = True
+            else:
+                if self.exploring:
+                    self.state = self.state_transition(self.StateWallFollowing.STOP)
 
         # -------------- Handle state actions ---------------- #
         # Swithced x and y velocities on all function calls
@@ -310,12 +309,16 @@ class WallFollowing():
         command_velocity_y_temp = 0.0
         command_angle_rate_temp = 0.0
 
-        if self.state == self.StateWallFollowing.FORWARD:
-            command_velocity_y_temp = -1 * self.max_forward_speed
-            command_velocity_x_temp = 0.0
-            command_angle_rate_temp = 0.0
-        elif self.state == self.StateWallFollowing.HOVER:
+        if self.state == self.StateWallFollowing.HOVER:
             command_velocity_y_temp, command_velocity_x_temp, command_angle_rate_temp = self.command_hover()
+        elif self.state == self.StateWallFollowing.FORWARD:
+            command_velocity_y_temp = 0.0
+            command_velocity_x_temp = self.max_forward_speed
+            command_angle_rate_temp = 0.0
+        elif self.state == self.StateWallFollowing.BACKWARD:
+            command_velocity_y_temp = 0.0
+            command_velocity_x_temp = -self.max_forward_speed
+            command_angle_rate_temp = 0.0
         elif self.state == self.StateWallFollowing.TURN_TO_FIND_WALL:
             command_velocity_y_temp, command_angle_rate_temp = self.command_turn(self.max_turn_rate)
             command_velocity_x_temp = 0.0
@@ -326,9 +329,9 @@ class WallFollowing():
                 command_velocity_y_temp, command_angle_rate_temp = self.command_turn(self.max_turn_rate)
                 command_velocity_x_temp = 0.0
         elif self.state == self.StateWallFollowing.FORWARD_ALONG_WALL:
-            command_velocity_y_temp, command_velocity_x_temp = self.command_forward_along_wall(side_range)
+            command_velocity_y_temp, command_velocity_x_temp = self.command_forward_along_wall(front_range)
             command_angle_rate_temp = 0.0
-        elif self.state == self.StateWallFollowing.ROTATE_AROUND_WALL:
+        elif self.state == self.StateWallFollowing.ROTATE_OUTER_CORNER:
             # If first time around corner
             #   first try to find the wall again
             # if side range is larger than preffered distance from wall
@@ -354,13 +357,15 @@ class WallFollowing():
                 command_velocity_y_temp, command_velocity_x_temp, command_angle_rate_temp = \
                     self.command_turn_around_corner_and_adjust(
                         self.reference_distance_from_wall, side_range)
-        elif self.state == self.StateWallFollowing.ROTATE_IN_CORNER:
+        elif self.state == self.StateWallFollowing.ROTATE_INNER_CORNER:
             command_velocity_y_temp, command_angle_rate_temp = self.command_turn(self.max_turn_rate)
             command_velocity_x_temp = 0.0
         elif self.state == self.StateWallFollowing.FIND_CORNER:
             command_velocity_x_temp, command_angle_rate_temp = self.command_align_corner(
                 -1 * self.max_turn_rate, side_range, self.reference_distance_from_wall)
             command_velocity_y_temp = 0.0
+        elif self.state == self.StateWallFollowing.STOP:
+            command_velocity_y_temp, command_velocity_x_temp, command_angle_rate_temp = self.command_hover()
         else:
             # state does not exist, so hover!
             command_velocity_y_temp, command_velocity_x_temp, command_angle_rate_temp = self.command_hover()
@@ -368,16 +373,6 @@ class WallFollowing():
         command_velocity_x = command_velocity_x_temp
         command_velocity_y = command_velocity_y_temp
         command_yaw_rate = command_angle_rate_temp
-        
-        # Make sure the  self.start_distance_threshold is smaller than X in distance_to_start > X (by half is recommended)
-        distance_to_start = self.check_near_start(command_velocity_x, command_velocity_y, current_heading)
-        if distance_to_start > 0.4:
-            self.has_left_start = True
-    
-        if self.has_left_start and distance_to_start < self.start_distance_threshold:
-            self.state = self.StateWallFollowing.HOVER
-            # print ("\n\n\nEnding exploration\n\n\n")
-            return 0.0, 0.0, 0.0, self.state
 
         # print(f"x:{command_velocity_x}, y:{command_velocity_y}")
         return command_velocity_x, command_velocity_y, command_yaw_rate, self.state

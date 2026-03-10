@@ -42,7 +42,7 @@ class WallFollowingMultiranger(Node):
         max_turn_rate = self.get_parameter('max_turn_rate').value
         self.declare_parameter('max_forward_speed', 0.5)
         max_forward_speed = self.get_parameter('max_forward_speed').value
-        self.declare_parameter('wall_following_direction', 'right')
+        self.declare_parameter('wall_following_direction', 'CCW')
         self.wall_following_direction = self.get_parameter('wall_following_direction').value
 
         self.odom_subscriber = self.create_subscription(
@@ -67,20 +67,27 @@ class WallFollowingMultiranger(Node):
         # Create a timer to run the wall following state machine
         self.timer = self.create_timer(0.01, self.timer_callback)
 
+        # Convert string direction to enum
+        if self.wall_following_direction == 'CW':
+            wf_dir = WallFollowing.WallFollowingDirection.CW
+        else:
+            wf_dir = WallFollowing.WallFollowingDirection.CCW
+
         # Initialize wall following state machine
         self.wall_following = WallFollowing(
+                wall_following_direction=wf_dir,
                 max_turn_rate=max_turn_rate,
                 max_forward_speed=max_forward_speed,
-                init_state=WallFollowing.StateWallFollowing.FORWARD)
+                init_state=WallFollowing.StateWallFollowing.HOVER,
+                position_x=self.position[0],
+                position_y=self.position[1])
 
         # Give a take off command but wait for the delay to start the wall following
         self.wait_for_start = True
         self.start_clock = self.get_clock().now().nanoseconds * 1e-9
         msg = Twist()
-        msg.linear.z = 0.5 # ADD (the height that the drone will be flying)
+        msg.linear.z = 0.5
         self.twist_publisher.publish(msg)
-
-        self.state = WallFollowing.StateWallFollowing.HOVER
 
     def stop_wall_following_cb(self, request, response):
         self.get_logger().info('Stopping wall following')
@@ -116,34 +123,34 @@ class WallFollowingMultiranger(Node):
         actual_yaw_rad = self.angles[2]
 
         # get front and side range in meters
-        right_range = self.ranges[0] #1 ADD CHANGE [0-3]
-        front_range = self.ranges[1] #2
-        left_range = self.ranges[2] #3
+        right_range = self.ranges[1]
+        front_range = self.ranges[2]
+        left_range = self.ranges[3]
 
-        #self.get_logger().info(f"\n\nFront range: {front_range}, \nRight range: {right_range}, \nLeft range: {left_range}")
+        # self.get_logger().info(f"\n\nFront range: {front_range}, \nRight range: {right_range}, \nLeft range: {left_range}")
 
         # choose here the direction that you want the wall following to turn to
-        if self.wall_following_direction == 'right':
-            wf_dir = WallFollowing.WallFollowingDirection.RIGHT
-            side_range = left_range
-        else:
-            wf_dir = WallFollowing.WallFollowingDirection.LEFT
+        if self.wall_following_direction == 'CW':
+            wf_dir = WallFollowing.WallFollowingDirection.CW
             side_range = right_range
+        else:
+            wf_dir = WallFollowing.WallFollowingDirection.CCW
+            side_range = left_range
 
         time_now = self.get_clock().now().nanoseconds * 1e-9
 
         # get velocity commands and current state from wall following state machine
-        if side_range > 0.1:
-            prev_state = self.state
-            velocity_x, velocity_y, yaw_rate, state_wf = self.wall_following.wall_follower(
-                front_range, side_range, actual_yaw_rad, wf_dir, time_now)
+        prev_state = self.wall_following.state
+        velocity_x, velocity_y, yaw_rate, state_wf = self.wall_following.wall_follower(
+            front_range, side_range, actual_yaw_rad, wf_dir, time_now, self.position[0], self.position[1])
                 
-            # ADD TO CHECK DRONE STATE
-            if prev_state != state_wf:
-                self.get_logger().info(f"Current State: {state_wf.name}")
-                self.state = state_wf
-
-
+        # print current state
+        if prev_state != state_wf:
+            self.get_logger().info(f"Current State: {state_wf.name}")
+            self.wall_following.state = state_wf
+            self.get_logger().info(f"       Front Range: {front_range}, Side Range: {side_range}")
+            self.get_logger().info(f"       Distance From Start: {self.wall_following.distance_from_start()}")
+            
 
         msg = Twist()
         msg.linear.x = velocity_x

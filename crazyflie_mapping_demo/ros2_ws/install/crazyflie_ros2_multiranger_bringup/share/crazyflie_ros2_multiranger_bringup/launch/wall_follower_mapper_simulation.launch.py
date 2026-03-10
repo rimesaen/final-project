@@ -49,7 +49,7 @@ def generate_launch_description():
             {'delay': 5.0},
             {'max_turn_rate': 0.7},
             {'max_forward_speed': 0.5},
-            {'wall_following_direction': 'right'}
+            {'wall_following_direction': 'CW'}
         ]
     )
 
