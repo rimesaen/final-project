@@ -1,6 +1,0 @@
-# CMake generated Testfile for 
-# Source directory: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-multiranger/crazyflie_ros2_multiranger_bringup
-# Build directory: /home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/build/crazyflie_ros2_multiranger_bringup
-# 
-# This file includes the relevant testing commands required for 
-# testing this directory and lists subdirectories to be tested as well.

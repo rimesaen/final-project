@@ -1,5 +1,0 @@
-  File "/home/odyssey/final-project/crazyflie_mapping_demo/ros2_ws/install/crazyflie_ros2_multiranger_wall_following/lib/python3.10/site-packages/crazyflie_ros2_multiranger_wall_following/wall_following_multiranger.py", line 88
-    self.twist_publisher.publish(msg
-                                ^
-SyntaxError: '(' was never closed
-

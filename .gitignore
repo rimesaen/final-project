@@ -1,2 +1,5 @@
 # ignore venv
 client-venv/
+crazyflie_mapping_demo/ros2_ws/build
+crazyflie_mapping_demo/ros2_ws/install
+crazyflie_mapping_demo/ros2_ws/log
