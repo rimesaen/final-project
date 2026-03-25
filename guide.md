@@ -277,11 +277,11 @@ sudo dhclient -v ens33
 ```
 python3 opencv-viewer.py -n 192.168.4.1
 ```
-### Camera Feed inside Simulation
+### Taking pictures + wall following (in simulation)
 
 > Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
 
-#### Step 1: Modify the Model Files
+#### Step 1: Modify the Model Files (if not already)
 
 You must add a camera sensor to the drone’s model definition.
 
@@ -318,6 +318,14 @@ Add the following XML block **inside** the `<link name="crazyflie/body">` tag,
 ```
 #### Step 2: Open 3 Terminals
 
+0. Rebuild the workspace (if haven't already)
+
+```
+cd ~/final-project/crazyflie_mapping_demo/ros2_ws
+colcon build
+source install/setup.bash
+```
+
 1. First terminal: 
 
 ```
@@ -346,7 +354,11 @@ Inside RQT:
 Go to: Plugins → Visualization → Image View
 Select Topic: /camera
 
+> The images are saved in ros2_ws in a folder named **wall_follower_images**
+
 I take it worked by the look on you face ^^
+
+> For this section we jusy modified wall_following.py and wall_following_multiranger.py and I flagged everyhtin added with ##########ADD.
 
 ## Troubleshooting
 
