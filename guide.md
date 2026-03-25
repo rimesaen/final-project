@@ -31,7 +31,7 @@ Last Update: 6 February 2026
 > - Operating System: *Ubuntu 64-bit, 22.04.5 LTS*
 > - Hard Disk: *80 GB (tentative)*
 > - Memory: *8000 MB (tentative)*
-> - Network connection: *NAT* (may need to change for the AI deck to work; not so sure yet)
+> - Network connection: *NAT*
 
 ### Procedure
 
@@ -72,7 +72,7 @@ Last Update: 6 February 2026
 git clone https://github.com/rimesaen/final-project.git --recursive
 ```
 
-5. Install some more stuff.
+4. Install some more stuff.
 
 ```
 sudo apt-get install libboost-program-options-dev libusb-1.0-0-dev python3-colcon-common-extensions
@@ -114,6 +114,8 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ### Testing out the simulation (wall-following)
 
+> Worked previously, but now doesn't... Will also be updating with improvements to the algorithm.
+
 1. First terminal:
 
 ```
@@ -133,7 +135,7 @@ ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 
 ### Testing out the real world (manual control)
 
-> High chance of going on a rampage. Unclear cause.
+> Not yet tested!
 
 1. First terminal:
 
@@ -152,6 +154,8 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 ### Testing out the real world (wall-following)
+
+> Not yet tested!
 
 1. First terminal:
 
@@ -217,11 +221,19 @@ cfclient
 
     - If it works, you should see `ESP32: I (910) SYS: Initialized` in the console of cfclient when the drone is connected to (the console can be opened from *View*).
 
-#### Wi-Fi connection
+#### Wi-Fi connection & camera in real life
 
-> NOT WORKING!!! I REPEAT, NOT WORKING!!!!!!
+> WORKED!!!
 
-1. Navigate to crazyflie-firmware and throw out the following commands:
+1. Put your VMware in Bridge mode following this tutorial : https://youtu.be/7T4DYrosAfw?si=pRIoc5VGfkOzwLJT 
+
+    - Remeber your "Bridge to" sellection in Virtual Network Editor (Personally I chose Intel(R) Wi-Fi 6 AX201 160MHz)
+ 
+2. On the host pc, open Device Manager, then navigate to Network Adapters, and select your network sellection in step 1. Navigate to Advanced and set the value to 6.Dual Band 802. 11a/b/g.
+
+    - Property should already be set to 802. 11a/b/g Wireless Mode.
+
+3. Navigate to crazyflie-firmware and throw out the following commands:
 
     - The make distclean is to clean out previous configuration files, just in case.
 
@@ -230,13 +242,15 @@ make distclean
 make cf2_defconfig
 ```
 
-2. Change configurations by going into menu config.
+4. Change configurations by going into menu config.
+
+    - Set the AI deck mode to Access point (AP) mode (no need to change the SSID or Password)
 
 ```
 make menuconfig
 ```
 
-3. Once done,
+5. Once done,
 
     - During `make cload`, press and hold the power button of the drone for 3 seconds to enter bootloader mode.
 
@@ -244,6 +258,95 @@ make menuconfig
 make -j$(nproc)
 make cload
 ```
+
+6. Once still connected to a fast wifi, install openCv as you need it to run the test, but make sure to unistall it afterwards, as it interferes with cfclient.
+
+7. Now in you host computer connect to "WiFi streaming example" in the list of you available netwroks. 
+
+    - Your WMware automatically should be connected to the same network if the bridge mode is set correctly. To check, inside a terminal in your WMware run:
+
+```
+sudo dhclient -v ens33
+```
+    - You should see : DHCPACK of 192.168.4.3 from 192.168.4.1
+    
+8. To test the camera run :
+
+    - Make sure the drone is at least 80cm away from the pc you're running the command in or the signal would be too loud and you may get black camera feed.
+
+```
+python3 opencv-viewer.py -n 192.168.4.1
+```
+### Camera Feed inside Simulation
+
+> Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
+
+#### Step 1: Modify the Model Files
+
+You must add a camera sensor to the drone’s model definition.
+
+There are **two possible `model.sdf` locations**. To be safe, update both (the first one is the main file):
+
+~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo/crazyflie/model.sdf
+~/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_gazebo/models/crazyflie/model.sdf
+
+**Action:**
+
+Add the following XML block **inside** the `<link name="crazyflie/body">` tag,
+**immediately after the multiranger sensor**:
+
+```xml
+<sensor name="camera" type="camera">
+  <pose>0.03 0 0.02 0 0 0</pose>
+  <always_on>1</always_on>
+  <update_rate>15</update_rate>
+  <visualize>true</visualize>
+  <topic>camera</topic>
+  <camera name="front">
+    <horizontal_fov>1.57</horizontal_fov>
+    <image>
+      <width>320</width>
+      <height>320</height>
+      <format>R8G8B8</format>
+    </image>
+    <clip>
+      <near>0.01</near>
+      <far>100</far>
+    </clip>
+  </camera>
+</sensor>
+```
+#### Step 2: Open 3 Terminals
+
+1. First terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.py
+```
+
+2. Second terminal: 
+
+This creates the link so ROS tools can see the Gazebo camera feed.
+
+```
+ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
+```
+
+3. Third terminal: 
+
+```
+rqt
+```
+
+Inside RQT:
+
+Go to: Plugins → Visualization → Image View
+Select Topic: /camera
+
+I take it worked by the look on you face ^^
 
 ## Troubleshooting
 
@@ -261,15 +364,8 @@ Try starting the drone up in bootloader mode (press and hold power button for 3 
 
 Use `gh auth login` instead of whatever they're suggesting. Unless they're suggesting `gh auth login`, in which case, do that.
 
-### Colcon build? More like colcon... doesn't build...
+### Rvis Global Status is ERROR!!
 
-Pull a quick little
+First, check you Gazebo version and make sure you have the right one. But if you have the right one and it doesn't work...
 
-```
-cd ~/final-project/crazyflie_mapping_demo/ros2_ws
-rm -rf build/ install/ log/
-```
-
-### Simulation not running! Map not found! Or something!
-
-Check the logs; it's highly likely that the numpy version is wrong. Try setting up cfclient first.
+Don't panic! On the top of this guide and under "Setting up the simulation" and then "Procedure" run steps 4 and 5 again. It'll work, promise ;)
