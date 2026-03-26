@@ -12,6 +12,7 @@ Last Update: 6 February 2026
     - [Testing out the simulation (wall-following)](#testing-out-the-simulation-wall-following)
     - [Testing out the real world (manual control)](#testing-out-the-real-world-manual-control)
     - [Testing out the real world (wall-following)](#testing-out-the-real-world-wall-following)
+    - [Taking pictures + wall following (in simulation)](#taking-pictures--wall-following-in-simulation)
 
 3. [Setting up the drones](#setting-up-the-drones)
 
@@ -155,8 +156,6 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ### Testing out the real world (wall-following)
 
-> Not yet tested!
-
 1. First terminal:
 
 ```
@@ -172,6 +171,89 @@ ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.
 source /opt/ros/humble/setup.bash
 ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 ```
+
+### Taking pictures + wall following (in simulation)
+
+> Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
+
+#### Step 1: Modify the Model Files (if not already)
+
+You must add a camera sensor to the drone’s model definition.
+
+There are **two possible `model.sdf` locations**. To be safe, update both (the first one is the main file):
+
+~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo/crazyflie/model.sdf
+~/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_gazebo/models/crazyflie/model.sdf
+
+**Action:**
+
+Add the following XML block **inside** the `<link name="crazyflie/body">` tag,
+**immediately after the multiranger sensor**:
+
+```xml
+<sensor name="camera" type="camera">
+  <pose>0.03 0 0.02 0 0 0</pose>
+  <always_on>1</always_on>
+  <update_rate>15</update_rate>
+  <visualize>true</visualize>
+  <topic>camera</topic>
+  <camera name="front">
+    <horizontal_fov>1.57</horizontal_fov>
+    <image>
+      <width>320</width>
+      <height>320</height>
+      <format>R8G8B8</format>
+    </image>
+    <clip>
+      <near>0.01</near>
+      <far>100</far>
+    </clip>
+  </camera>
+</sensor>
+```
+#### Step 2: Open 3 Terminals
+
+0. Rebuild the workspace (if haven't already)
+
+```
+cd ~/final-project/crazyflie_mapping_demo/ros2_ws
+colcon build
+source install/setup.bash
+```
+
+1. First terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.py
+```
+
+2. Second terminal: 
+
+This creates the link so ROS tools can see the Gazebo camera feed.
+
+```
+ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
+```
+
+3. Third terminal: 
+
+```
+rqt
+```
+
+Inside RQT:
+
+Go to: Plugins → Visualization → Image View
+Select Topic: /camera
+
+> The images are saved in ros2_ws in a folder named **wall_follower_images**
+
+I take it worked by the look on you face ^^
+
+> For this section we jusy modified wall_following.py and wall_following_multiranger.py and I flagged everyhtin added with ##########ADD.
 
 ## Setting up the drones
 
@@ -277,88 +359,6 @@ sudo dhclient -v ens33
 ```
 python3 opencv-viewer.py -n 192.168.4.1
 ```
-### Taking pictures + wall following (in simulation)
-
-> Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
-
-#### Step 1: Modify the Model Files (if not already)
-
-You must add a camera sensor to the drone’s model definition.
-
-There are **two possible `model.sdf` locations**. To be safe, update both (the first one is the main file):
-
-~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo/crazyflie/model.sdf
-~/final-project/crazyflie_mapping_demo/ros2_ws/src/ros_gz_crazyflie/ros_gz_crazyflie_gazebo/models/crazyflie/model.sdf
-
-**Action:**
-
-Add the following XML block **inside** the `<link name="crazyflie/body">` tag,
-**immediately after the multiranger sensor**:
-
-```xml
-<sensor name="camera" type="camera">
-  <pose>0.03 0 0.02 0 0 0</pose>
-  <always_on>1</always_on>
-  <update_rate>15</update_rate>
-  <visualize>true</visualize>
-  <topic>camera</topic>
-  <camera name="front">
-    <horizontal_fov>1.57</horizontal_fov>
-    <image>
-      <width>320</width>
-      <height>320</height>
-      <format>R8G8B8</format>
-    </image>
-    <clip>
-      <near>0.01</near>
-      <far>100</far>
-    </clip>
-  </camera>
-</sensor>
-```
-#### Step 2: Open 3 Terminals
-
-0. Rebuild the workspace (if haven't already)
-
-```
-cd ~/final-project/crazyflie_mapping_demo/ros2_ws
-colcon build
-source install/setup.bash
-```
-
-1. First terminal: 
-
-```
-source /opt/ros/humble/setup.bash
-source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
-export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
-ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.py
-```
-
-2. Second terminal: 
-
-This creates the link so ROS tools can see the Gazebo camera feed.
-
-```
-ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
-```
-
-3. Third terminal: 
-
-```
-rqt
-```
-
-Inside RQT:
-
-Go to: Plugins → Visualization → Image View
-Select Topic: /camera
-
-> The images are saved in ros2_ws in a folder named **wall_follower_images**
-
-I take it worked by the look on you face ^^
-
-> For this section we jusy modified wall_following.py and wall_following_multiranger.py and I flagged everyhtin added with ##########ADD.
 
 ## Troubleshooting
 
