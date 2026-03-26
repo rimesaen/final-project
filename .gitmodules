@@ -1,6 +1,3 @@
-[submodule "crazyflie_mapping_demo/simulation_ws/crazyflie-simulation"]
-	path = crazyflie_mapping_demo/simulation_ws/crazyflie-simulation
-	url = https://github.com/bitcraze/crazyflie-simulation.git
 [submodule "crazyflie_mapping_demo/ros2_ws/src/cf-multiranger"]
 	path = crazyflie_mapping_demo/ros2_ws/src/cf-multiranger
 	url = https://github.com/rimesaen/cf-multiranger.git
@@ -10,6 +7,9 @@
 [submodule "crazyflie_mapping_demo/ros2_ws/src/cf-gz"]
 	path = crazyflie_mapping_demo/ros2_ws/src/cf-gz
 	url = https://github.com/rimesaen/cf-gz.git
+[submodule "crazyflie_mapping_demo/simulation_ws/cf-simulation"]
+	path = crazyflie_mapping_demo/simulation_ws/cf-simulation
+	url = https://github.com/rimesaen/cf-simulation
 [submodule "cf-client"]
 	path = cf-client
 	url = https://github.com/rimesaen/cf-client.git
