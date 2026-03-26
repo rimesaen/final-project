@@ -340,8 +340,17 @@ Try starting the drone up in bootloader mode (press and hold power button for 3 
 
 Use `gh auth login` instead of whatever they're suggesting. Unless they're suggesting `gh auth login`, in which case, do that.
 
+### Colcon build? More like colcon... doesn't build...
+
+Pull a quick little
+
+```
+cd ~/final-project/crazyflie_mapping_demo/ros2_ws
+rm -rf build/ install/ log/
+```
+
 ### Rvis Global Status is ERROR!!
 
-First, check you Gazebo version and make sure you have the right one. But if you have the right one and it doesn't work...
+First, check your Gazebo version and make sure you have the right one. But if you have the right one and it doesn't work...
 
 Don't panic! On the top of this guide and under "Setting up the simulation" and then "Procedure" run steps 4 and 5 again. It'll work, promise ;)
