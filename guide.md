@@ -119,7 +119,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 source /opt/ros/humble/setup.bash
 source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
-export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
 export LIBGL_ALWAYS_SOFTWARE=1
 ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_simulation.launch.py
 ```
