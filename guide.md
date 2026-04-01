@@ -121,9 +121,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 > Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
 
-1. Rebuild the workspace (if haven't already)
-
-2. First terminal: 
+1. First terminal: 
 
 ```
 source /opt/ros/humble/setup.bash
@@ -133,7 +131,7 @@ export LIBGL_ALWAYS_SOFTWARE=1
 ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_simulation.launch.py
 ```
 
-3. Second terminal: 
+2. Second terminal: 
 
 This creates a link so ROS tools can see the Gazebo camera feed.
 
@@ -142,7 +140,7 @@ source /opt/ros/humble/setup.bash
 ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
 ```
 
-4. Third terminal: 
+3. Third terminal: 
 
 ```
 source /opt/ros/humble/setup.bash
