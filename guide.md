@@ -119,7 +119,56 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 #### Single drone with camera
 
+> Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
+
+1. Rebuild the workspace (if haven't already)
+
+2. First terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_simulation.launch.py
+```
+
+3. Second terminal: 
+
+This creates a link so ROS tools can see the Gazebo camera feed.
+
+```
+source /opt/ros/humble/setup.bash
+ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
+```
+
+4. Third terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+rqt
+```
+
+Inside RQT:
+
+Go to: Plugins → Visualization → Image View
+Select Topic: /camera
+
+> The images are saved in ros2_ws in a folder named **wall_follower_images**
+
+I take it worked by the look on your face ^^
+
 #### Double drones without camera
+
+1. Only terminal:
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_double_simulation.launch.py
+```
 
 ### Testing out the real world (manual control)
 
@@ -160,53 +209,6 @@ ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.
 source /opt/ros/humble/setup.bash
 ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 ```
-
-### Taking pictures + wall following (in simulation)
-
-> Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
-
-1. Rebuild the workspace (if haven't already)
-
-```
-cd ~/final-project/crazyflie_mapping_demo/ros2_ws
-colcon build
-source install/setup.bash
-```
-
-2. First terminal: 
-
-```
-source /opt/ros/humble/setup.bash
-source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
-export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
-export LIBGL_ALWAYS_SOFTWARE=1
-ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_simulation.launch.py
-```
-
-3. Second terminal: 
-
-This creates a link so ROS tools can see the Gazebo camera feed.
-
-```
-source /opt/ros/humble/setup.bash
-ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
-```
-
-4. Third terminal: 
-
-```
-source /opt/ros/humble/setup.bash
-rqt
-```
-
-Inside RQT:
-
-Go to: Plugins → Visualization → Image View
-Select Topic: /camera
-
-> The images are saved in ros2_ws in a folder named **wall_follower_images**
-
-I take it worked by the look on your face ^^
 
 ## Setting up the drones
 
