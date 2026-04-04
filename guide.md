@@ -117,6 +117,17 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ### Testing out the simulation (wall-following)
 
+#### Single drone without camera
+
+1. Only terminal:
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_simulation.launch.py
+```
+
 #### Single drone with camera
 
 > Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
@@ -128,7 +139,7 @@ source /opt/ros/humble/setup.bash
 source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
 export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
 export LIBGL_ALWAYS_SOFTWARE=1
-ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_simulation.launch.py
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_camera_simulation.launch.py
 ```
 
 2. Second terminal: 
@@ -335,7 +346,7 @@ Pull a quick little
 
 ```
 cd ~/final-project/crazyflie_mapping_demo/ros2_ws
-rm -rf build/ install/ log/
+rm -rf build/ install/ log/ wall_follower_images/
 ```
 
 ### Rvis Global Status is ERROR!!
