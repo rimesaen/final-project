@@ -1,6 +1,6 @@
 # A COMPREHENSIVE GUIDE TO SURVIVAL
 
-Last Update: 6 February 2026
+Last Update: 4 April 2026
 
 > Recommendation: listen to some Soulsborne boss OST while going through this guide. It's about to be lore accurate.
 
@@ -144,24 +144,12 @@ ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_camer
 
 2. Second terminal: 
 
-This creates a link so ROS tools can see the Gazebo camera feed.
-
 ```
 source /opt/ros/humble/setup.bash
-ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
+rqt_image_view /crazyflie/camera
 ```
 
-3. Third terminal: 
-
-```
-source /opt/ros/humble/setup.bash
-rqt
-```
-
-Inside RQT:
-
-Go to: Plugins → Visualization → Image View
-Select Topic: /camera
+> The camera topic is bridged automatically
 
 > The images are saved in ros2_ws in a folder named **wall_follower_images**
 
@@ -178,6 +166,32 @@ export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/c
 export LIBGL_ALWAYS_SOFTWARE=1
 ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_double_simulation.launch.py
 ```
+
+#### Double drones with camera
+
+1. First terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_double_camera_simulation.launch.py
+```
+
+2. Second terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+rqt
+```
+
+Inside RQT:
+
+Go to: Plugins → Visualization → Image View
+Select Topic: /{robot_prefix}/camera
+
+> The images are saved in ros2_ws in a folder named **wall_follower_images/{robot_prefix}**
 
 ### Testing out the real world (manual control)
 
