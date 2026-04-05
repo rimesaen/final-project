@@ -94,7 +94,7 @@ colcon build --cmake-args -DBUILD_TESTING=ON
 
 6. Voila! That should work! Hopefully!
 
-### Testing out the simulation (manual control)
+### Testing out the manual control (simulation)
 
 1. First terminal:
 
@@ -113,7 +113,7 @@ source /opt/ros/humble/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-### Testing out the simulation (wall-following)
+### Testing out the wall-following (simulation)
 
 > Worked previously, but now doesn't... Will also be updating with improvements to the algorithm.
 
@@ -134,7 +134,7 @@ source /opt/ros/humble/setup.bash
 ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 ```
 
-### Testing out the real world (manual control)
+### Testing out the manual control (real world)
 
 > Not yet tested!
 
@@ -154,7 +154,7 @@ source /opt/ros/humble/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-### Testing out the real world (wall-following)
+### Testing out the wall-following (real world)
 
 1. First terminal:
 
@@ -172,7 +172,46 @@ source /opt/ros/humble/setup.bash
 ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 ```
 
-### Taking pictures + wall following (in simulation)
+### Testing out the wall-following + taking pictures (real world)
+
+> From the root directory activate the virtual environment for all the following termianls
+
+```
+source opencv-venv/bin/activate
+```
+
+1. Build the ws if you haven't:
+
+```
+cd ~/final-project/crazyflie_mapping_demo/ros2_ws
+colcon build
+source install/setup.bash
+```
+
+2. To see the camera feed through out the following command in the first terminal:\
+
+```
+source /opt/ros/humble/setup.bash
+cd ~/final-project/aideck-gap8-examples/examples/other/wifi-img-streamer
+python3 opencv-viewer.py -n 192.168.4.1
+```
+3. Second terminal:
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/cf-simulation/simulator_files/gazebo
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.py
+```
+
+4. To stop the drone:
+
+```
+source /opt/ros/humble/setup.bash
+ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
+```
+
+### Taking pictures + wall following (simulation)
 
 > Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
 
@@ -278,8 +317,14 @@ cfclient
 2. On the host pc, open Device Manager, then navigate to Network Adapters, and select your network sellection in step 1. Navigate to Advanced and set the value to 6.Dual Band 802. 11a/b/g.
 
     - Property should already be set to 802. 11a/b/g Wireless Mode.
+    
+3. Activate the client virtual environment as it is needed for *make cload* in later steps: 
 
-3. Navigate to crazyflie-firmware and throw out the following commands:
+```
+source client-venv/bin/activate
+```
+
+4. Navigate to crazyflie-firmware and throw out the following commands:
 
     - The make distclean is to clean out previous configuration files, just in case.
 
@@ -288,15 +333,19 @@ make distclean
 make cf2_defconfig
 ```
 
-4. Change configurations by going into menu config.
-
-    - Set the AI deck mode to Access point (AP) mode (no need to change the SSID or Password)
+5. Change configurations by going into menu config.
 
 ```
 make menuconfig
 ```
 
-5. Once done,
+    - Go to Expantion Deck Configuration > Deck Drivers and check Support the AI Deck
+    
+    - beneath Support the AI Deck set Wifi Setup and Startup to Access point (AP) mode
+    
+    - *IMPORTANT* Please DO change the SSID and Password (if you don't the network will not show up)
+
+6. Once done,
 
     - During `make cload`, press and hold the power button of the drone for 3 seconds to enter bootloader mode.
 
@@ -305,9 +354,9 @@ make -j$(nproc)
 make cload
 ```
 
-6. Once still connected to a fast wifi, install openCv as you need it to run the test, but make sure to unistall it afterwards, as it interferes with cfclient.
+7. Now in you host computer connect to "WiFi streaming example" in the list of you available netwroks.
 
-7. Now in you host computer connect to "WiFi streaming example" in the list of you available netwroks. 
+    - *The drone must be in bootloader mode for you to see the network listed* 
 
     - Your WMware automatically should be connected to the same network if the bridge mode is set correctly. To check, inside a terminal in your WMware run:
 
@@ -316,13 +365,55 @@ sudo dhclient -v ens33
 ```
     - You should see : DHCPACK of 192.168.4.3 from 192.168.4.1
     
-8. To test the camera run :
+> Wi-Fi name does not show up?! SOLVED
+
+If the wifi does not show up in your list of available networks in the host pc follow *Flash Wifi Example* in [1](https://www.bitcraze.io/documentation/tutorials/getting-started-with-aideck/#flash-wifi-example). After downloading the required file the commad will be: 
+
+```
+cfloader flash aideck_gap8_wifi_img_streamer_with_ap.bin deck-bcAI:gap8-fw -w radio://0/80/2M/E7E7E7E7E7
+```
+
+YAY!
+
+
+8. Activate the following virtual environment with openCV installed.
+
+```
+source opencv-venv/bin/activate
+```
+    
+9. To test the camera run :
 
     - Make sure the drone is at least 80cm away from the pc you're running the command in or the signal would be too loud and you may get black camera feed.
 
 ```
+cd ~/final-project/aideck-gap8-examples/examples/other/wifi-img-streamer
 python3 opencv-viewer.py -n 192.168.4.1
 ```
+> Scrip doen't run / stopped running!! SOLVED
+
+If for any reason the script does not run, it is most probably a wifi connection issue so *first turn the drone on and off* and then try the following:
+
+Inside WMware run:
+
+```
+ip a
+```
+you should see *inet 192.168.4.1*. If not reconnect to WiFi streaming example in the host pc and run the following in WMware :
+
+```
+sudo dhclient
+```
+
+To check if you're acctually connected, run the following:
+
+```
+ping 192.168.4.1
+```
+
+you should see *64 bytes from 192.168.4.1*
+
+VOLA!!
 
 ## Troubleshooting
 
@@ -354,3 +445,13 @@ rm -rf build/ install/ log/
 First, check your Gazebo version and make sure you have the right one. But if you have the right one and it doesn't work...
 
 Don't panic! On the top of this guide and under "Setting up the simulation" and then "Procedure" run steps 4 and 5 again. It'll work, promise ;)
+
+### Rvis map loads wierdly and drone acts irregularly!!!
+
+That may be because of Rvis not closing properly last time and hence run the following:
+
+```
+pkill -9 rviz
+pkill -9 rviz2
+```
+
