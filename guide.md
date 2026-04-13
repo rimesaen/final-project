@@ -1,6 +1,6 @@
 # A COMPREHENSIVE GUIDE TO SURVIVAL
 
-Last Update: 6 February 2026
+Last Update: 4 April 2026
 
 > Recommendation: listen to some Soulsborne boss OST while going through this guide. It's about to be lore accurate.
 
@@ -96,6 +96,8 @@ colcon build --cmake-args -DBUILD_TESTING=ON
 
 ### Testing out the manual control (simulation)
 
+> UNTESTED AS OF APRIL
+
 1. First terminal:
 
 ```
@@ -115,28 +117,85 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ### Testing out the wall-following (simulation)
 
-> Worked previously, but now doesn't... Will also be updating with improvements to the algorithm.
+#### Single drone without camera
 
-1. First terminal:
+1. Only terminal:
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_simulation.launch.py
+```
+
+#### Single drone with camera
+
+> Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
+
+1. First terminal: 
 
 ```
 source /opt/ros/humble/setup.bash
 source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
 export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
 export LIBGL_ALWAYS_SOFTWARE=1
-ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_simulation.launch.py
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_single_camera_simulation.launch.py
 ```
 
-2. To stop the drone:
+2. Second terminal: 
 
 ```
 source /opt/ros/humble/setup.bash
-ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
+rqt_image_view /crazyflie/camera
 ```
 
-### Testing out the manual control (real world)
+> The camera topic is bridged automatically
 
-> Not yet tested!
+> The images are saved in ros2_ws in a folder named **wall_follower_images**
+
+I take it worked by the look on your face ^^
+
+#### Double drones without camera
+
+1. Only terminal:
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_double_simulation.launch.py
+```
+
+#### Double drones with camera
+
+1. First terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_double_camera_simulation.launch.py
+```
+
+2. Second terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+rqt
+```
+
+Inside RQT:
+
+Go to: Plugins → Visualization → Image View
+Select Topic: /{robot_prefix}/camera
+
+> The images are saved in ros2_ws in a folder named **wall_follower_images/{robot_prefix}**
+
+### Testing out the real world (manual control)
+
+> UNTESTED AS OF APRIL
 
 1. First terminal:
 
@@ -154,7 +213,9 @@ source /opt/ros/humble/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-### Testing out the wall-following (real world)
+### Testing out the real world (wall-following)
+
+> UNTESTED AS OF APRIL
 
 1. First terminal:
 
@@ -171,92 +232,6 @@ ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.
 source /opt/ros/humble/setup.bash
 ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
 ```
-
-### Testing out the wall-following + taking pictures (real world)
-
-> From the root directory activate the virtual environment for all the following termianls
-
-```
-source opencv-venv/bin/activate
-```
-
-1. Build the ws if you haven't:
-
-```
-cd ~/final-project/crazyflie_mapping_demo/ros2_ws
-colcon build
-source install/setup.bash
-```
-
-2. To see the camera feed through out the following command in the first terminal:\
-
-```
-source /opt/ros/humble/setup.bash
-cd ~/final-project/aideck-gap8-examples/examples/other/wifi-img-streamer
-python3 opencv-viewer.py -n 192.168.4.1
-```
-3. Second terminal:
-
-```
-source /opt/ros/humble/setup.bash
-source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
-export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/simulation_ws/cf-simulation/simulator_files/gazebo
-ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_real.launch.py
-```
-
-4. To stop the drone:
-
-```
-source /opt/ros/humble/setup.bash
-ros2 service call /crazyflie/stop_wall_following std_srvs/srv/Trigger
-```
-
-### Taking pictures + wall following (simulation)
-
-> Finally, we give the drone *eyes* in simulation. Whether it sees the truth or just more bugs… remains to be seen.
-
-1. Rebuild the workspace (if haven't already)
-
-```
-cd ~/final-project/crazyflie_mapping_demo/ros2_ws
-colcon build
-source install/setup.bash
-```
-
-2. First terminal: 
-
-```
-source /opt/ros/humble/setup.bash
-source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
-export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
-export LIBGL_ALWAYS_SOFTWARE=1
-ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_simulation.launch.py
-```
-
-3. Second terminal: 
-
-This creates a link so ROS tools can see the Gazebo camera feed.
-
-```
-source /opt/ros/humble/setup.bash
-ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image
-```
-
-4. Third terminal: 
-
-```
-source /opt/ros/humble/setup.bash
-rqt
-```
-
-Inside RQT:
-
-Go to: Plugins → Visualization → Image View
-Select Topic: /camera
-
-> The images are saved in ros2_ws in a folder named **wall_follower_images**
-
-I take it worked by the look on your face ^^
 
 ## Setting up the drones
 
@@ -437,7 +412,7 @@ Pull a quick little
 
 ```
 cd ~/final-project/crazyflie_mapping_demo/ros2_ws
-rm -rf build/ install/ log/
+rm -rf build/ install/ log/ wall_follower_images/
 ```
 
 ### Rvis Global Status is ERROR!!
