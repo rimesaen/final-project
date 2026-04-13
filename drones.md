@@ -15,6 +15,8 @@ Last Update: 24 February 2026
 
 26/2: Took Nothing out on another wall-following run. Successful!(?) It seems like there is a problem with the algorithm that causes the drones to struggle when the space around it is too little. When Nothing was moved out of the little box and into the bigger outer room, it followed one of the walls pretty alright (there's a video of it! Somewhere!).
 
+4/4: Equipting the drone with AI deck too. (Using the AI deck in Something(2) so I dont have to boot everything agian.
+
 ## #2: Something
 
 > AI deck equipped.
@@ -25,6 +27,9 @@ Last Update: 24 February 2026
 
 25/2.2: AI deck not successfully installed; the Wi-Fi connection couldn't be connected, and the access point couldn't be accessed. Unsure of reasons why.
 
+4/4: AI deck works fully!
+
+4/4: Something is NAKED NOW!
 ## #3: Anything
 
 > AI equipped.
