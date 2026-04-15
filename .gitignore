@@ -6,4 +6,7 @@ crazyflie_mapping_demo/ros2_ws/log
 
 .venv/
 __pycache__/
-*.pyc
+*.pycbuild/
+install/
+log/
+cache/
