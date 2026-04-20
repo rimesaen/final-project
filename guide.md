@@ -193,6 +193,32 @@ Select Topic: /{robot_prefix}/camera
 
 > The images are saved in ros2_ws in a folder named **wall_follower_images/{robot_prefix}**
 
+#### Quadruple drones with camera
+
+1. First terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+source ~/final-project/crazyflie_mapping_demo/ros2_ws/install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/final-project/crazyflie_mapping_demo/ros2_ws/src/cf-gz/ros_gz_crazyflie_gazebo/models
+export LIBGL_ALWAYS_SOFTWARE=1
+ros2 launch crazyflie_ros2_multiranger_bringup wall_follower_mapper_quadruple_camera_simulation.launch.py
+```
+
+2. Second terminal: 
+
+```
+source /opt/ros/humble/setup.bash
+rqt
+```
+
+Inside RQT:
+
+Go to: Plugins → Visualization → Image View
+Select Topic: /{robot_prefix}/camera
+
+> The images are saved in ros2_ws in a folder named **wall_follower_images/{robot_prefix}**
+
 ### Testing out the real world (manual control)
 
 > UNTESTED AS OF APRIL
@@ -413,6 +439,9 @@ Pull a quick little
 ```
 cd ~/final-project/crazyflie_mapping_demo/ros2_ws
 rm -rf build/ install/ log/ wall_follower_images/
+cd ~/final-project/crazyflie_mapping_demo/ros2_ws
+source /opt/ros/humble/setup.bash
+colcon build --cmake-args -DBUILD_TESTING=ON
 ```
 
 ### Rvis Global Status is ERROR!!

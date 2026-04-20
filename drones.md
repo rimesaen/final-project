@@ -1,6 +1,8 @@
 # DRONE RECORDS
 
-Last Update: 24 February 2026
+Last Update: 20 April 2026
+
+20/4: Forgot to update for a whole two months. Some are dying, some are living. A battery has been transplanted. We do not question fate no longer.
 
 ## Light signals
 
@@ -30,6 +32,7 @@ Last Update: 24 February 2026
 4/4: AI deck works fully!
 
 4/4: Something is NAKED NOW!
+
 ## #3: Anything
 
 > AI equipped.
