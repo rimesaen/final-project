@@ -1,0 +1,19 @@
+# virtual environment
+.venv/
+
+# model weights 
+models/
+*.pt
+*.pth
+
+# outputs
+output/
+results/
+masks/
+
+# Python
+__pycache__/
+*.pyc
+
+# mac files
+.DS_Store

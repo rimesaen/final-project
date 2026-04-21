@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+
+numpy
+opencv-python
+matplotlib
+pillow
+
+tqdm
+gdown
+filelock
+
+requests
+beautifulsoup4
