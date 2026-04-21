@@ -13,52 +13,14 @@ import torch
 #BEFORE YOU RUN, PLEASE CLONE THE GITHUB FOR THE UNET MODEL!!
 #  !git clone https://github.com/khanhha/crack_segmentation.git
 
-#--PATCHING UP SOME FILES, COMMENT ALLL OF THIS OUT IF YOUR PC HAS GPU--------
-# UTILS_PATH = "crack_segmentation/utils.py"
+#download model weights
+os.makedirs("models", exist_ok=True)
 
-# for line in fileinput.input(UTILS_PATH, inplace=True):
-#     line = line.replace("async=True", "non_blocking=True")
-
-#     line = line.replace(
-#         "checkpoint = torch.load(model_path)",
-#         "checkpoint = torch.load(model_path, map_location=torch.device('cpu'))"
-#     )
-
-#     line = line.replace(
-#         "model.cuda()",
-#         "model = model.to(torch.device('cpu'))"
-#     )
-
-#     print(line, end="")
-
-# print("utils.py patched")
-
-# INF_PATH = "crack_segmentation/inference_unet.py"
-
-# for line in fileinput.input(INF_PATH, inplace=True):
-#     line = line.replace(
-#         "Variable(X.unsqueeze(0)).cuda()",
-#         "Variable(X.unsqueeze(0)).to(torch.device('cpu'))"
-#     )
-
-#     line = line.replace(
-#         ".cuda()",
-#         ".to(torch.device('cpu'))"
-#     )
-
-#     print(line, end="")
-
-# print("inference_unet.py patched for CPU")
-
-
-# #download model weights
-# os.makedirs("models", exist_ok=True)
-
-# gdown.download(
-#     "https://drive.google.com/uc?id=1wA2eAsyFZArG3Zc9OaKvnBuxSAPyDl08",
-#     "models/model_unet_vgg_16_best.pt",
-#     quiet=False
-# )
+gdown.download(
+    "https://drive.google.com/uc?id=1wA2eAsyFZArG3Zc9OaKvnBuxSAPyDl08",
+    "models/model_unet_vgg_16_best.pt",
+    quiet=False
+)
 
 # finding the device being used to patch some files in the repo
 device = "cuda" if torch.cuda.is_available() else "cpu"
